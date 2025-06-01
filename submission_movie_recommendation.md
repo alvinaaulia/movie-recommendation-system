@@ -35,7 +35,7 @@ Dataset yang digunakan adalah [MovieLens 20M](https://www.kaggle.com/datasets/gr
 - `movie.csv`: metadata film
 - `rating.csv`: interaksi rating user-film
 - `tag.csv`: tag yang diberikan user
-- `link.csv`, `genome_scores.csv`, `genome_tags.csv`: fitur tambahan
+- `link.csv`, `genome_scores.csv`, `genome_tags.csv`: fitur tambahan, tidak digunakan.
 
 Variabel penting:
 - `movieId`, `title`, `genres`, `userId`, `rating`, `tag`
