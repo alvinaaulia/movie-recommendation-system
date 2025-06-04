@@ -38,9 +38,9 @@ Dataset yang digunakan adalah [MovieLens 20M Dataset](https://www.kaggle.com/dat
 | `movie.csv` | berisi metadata film: `movieId`, `title`, `genres` | 27.278 |
 | `rating.csv` | rating dari pengguna: `userId`, `movieId`, `rating`, `timestamp` | 20.000.263 |
 | `tag.csv` | tag yang diberikan user: `userId`, `movieId`, `tag`, `timestamp` | 465.564 |
-| `link.csv` | identifier link di sumber lain: `movieId`, `imdbId`, `tmdbId` | 27278 |
+| `link.csv` | identifier link di sumber lain: `movieId`, `imdbId`, `tmdbId` | 27.278 |
 | `genome_scores.csv` | nilai relevansi tags: `movieId`, `tagId`, `relevance` | 11.709.768 |
-| `genome_tags.csv` | deskripsi tags: `userId`, `movieId`, `tag`, `timestamp` | 465564 |
+| `genome_tags.csv` | deskripsi tags: `userId`, `movieId`, `tag`, `timestamp` | 1128 |
 
 Deskripsi fitur penting:
 - `movieId`: ID unik film
@@ -71,7 +71,7 @@ Langkah-langkah persiapan data yang dilakukan sebelum modeling:
 5. **TF-IDF Vectorization (Content-Based)**
    - Kolom `combined` ditransformasi menjadi vektor menggunakan `TfidfVectorizer`.
 6. **Pengambilan sampel (sampling) dari data rating**
-   - Pengambilan sebanyak 10% dari data asli (200.000) digunakan agar tidak berat pada model tapi tetap efektif untuk training model Collaborative Filtering.
+   - Pengambilan sebanyak 10% dari data asli (2000.000) digunakan agar tidak berat pada model tapi tetap efektif untuk training model Collaborative Filtering.
 7. **Encoding ID (Collaborative Filtering)**
    - `userId` dan `movieId` diubah menjadi indeks numerik dengan dictionary mapping.
    - Semua rating dinormalisasi ke skala 0–1 agar sesuai dengan fungsi aktivasi sigmoid.
