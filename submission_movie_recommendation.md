@@ -40,6 +40,7 @@ Dataset yang digunakan adalah [MovieLens 20M Dataset](https://www.kaggle.com/dat
 | `tag.csv` | tag yang diberikan user: `userId`, `movieId`, `tag`, `timestamp` | 465.564 |
 | `link.csv` | identifier link di sumber lain: `movieId`, `imdbId`, `tmdbId` | 27278 |
 | `genome_scores.csv` | nilai relevansi tags: `movieId`, `tagId`, `relevance` | 11.709.768 |
+| `genome_tags` | deskripsi tags: `userId`, `movieId`, `tag`, `timestamp` | 465564 |
 
 Deskripsi fitur penting:
 - `movieId`: ID unik film
