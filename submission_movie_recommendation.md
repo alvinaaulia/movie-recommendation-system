@@ -33,14 +33,14 @@ Proyek ini bertujuan membangun sistem rekomendasi film dengan dua pendekatan: **
 
 Dataset yang digunakan adalah [MovieLens 20M Dataset](https://www.kaggle.com/datasets/grouplens/movielens-20m-dataset) yang terdiri dari beberapa file utama:
 
-| Nama File | Deskripsi | Jumlah Baris |
-|-----------|-----------|--------------|
-| `movie.csv` | berisi metadata film: `movieId`, `title`, `genres` | 27.278 |
-| `rating.csv` | rating dari pengguna: `userId`, `movieId`, `rating`, `timestamp` | 20.000.263 |
-| `tag.csv` | tag yang diberikan user: `userId`, `movieId`, `tag`, `timestamp` | 465.564 |
-| `link.csv` | identifier link di sumber lain: `movieId`, `imdbId`, `tmdbId` | 27.278 |
-| `genome_scores.csv` | nilai relevansi tags: `movieId`, `tagId`, `relevance` | 11.709.768 |
-| `genome_tags.csv` | deskripsi tags: `userId`, `movieId`, `tag`, `timestamp` | 1128 |
+| Nama File | Deskripsi | Jumlah Baris | Jumlah Data Unik | Jumlah Kolom |
+|-----------|-----------|--------------|------------------|--------------|
+| `movie.csv` | berisi metadata film: `movieId`, `title`, `genres` | 27.278 | 27278 | 3 |
+| `rating.csv` | rating dari pengguna: `userId`, `movieId`, `rating`, `timestamp` | 20.000.263 | 138493 | 4 |
+| `tag.csv` | tag yang diberikan user: `userId`, `movieId`, `tag`, `timestamp` | 465.564 | 7801 | 4 |
+| `link.csv` | identifier link di sumber lain: `movieId`, `imdbId`, `tmdbId` | 27.278 | 27278 | 3 |
+| `genome_scores.csv` | nilai relevansi tags: `movieId`, `tagId`, `relevance` | 11.709.768 | 10381 | 3 |
+| `genome_tags.csv` | deskripsi tags: `userId`, `movieId`, `tag`, `timestamp` | 1128 | 1128 | 4 |
 
 Deskripsi fitur penting:
 - `movieId`: ID unik film
