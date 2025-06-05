@@ -1,5 +1,5 @@
 
-# Laporan Proyek Machine Learning - Movie Recommendation System
+# Movie Recommendation System
 
 ## Project Overview
 
