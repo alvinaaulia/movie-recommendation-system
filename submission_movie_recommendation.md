@@ -51,6 +51,12 @@ Deskripsi fitur penting:
 - `tag`: anotasi/komentar pendek pengguna
 - `timestamp`: waktu ketika user memberikan rating/tag dalam format UNIX timestamp
 
+Deskripsi fitur tambahan:
+- `imdbId` : identifier (kode unik) sumber film di Internet Movie Database ID
+- `tmdbId` : identifier (kode unik) sumber film di The Movie Database ID
+- `relevance` : nilai relevansi tag terhadap film
+- `tagId` : ID unik tag
+
 ## Exploratory Data Analysis (EDA)
 
 Distribusi rating:
@@ -62,12 +68,15 @@ Distribusi rating:
 Langkah-langkah persiapan data yang dilakukan sebelum modeling:
 
 1. **Mengatasi Missing Value**
-   - Film tanpa tag akan tetap dipertahankan, tetapi tag kosong (7733) dibuang dari `tag.csv` untuk menjaga kualitas konten.
+   - Film tanpa tag akan tetap dipertahankan, tetapi tag kosong (16) dibuang dari `tag.csv` atau dataframe tags untuk menjaga kualitas konten.
 2. **Mengatasi Duplikasi**
-   - Tidak ada duplikasi pada `movie_tags`.
-3. **Gabungkan genre dan tag menjadi satu kolom `combined`**
+   - Tidak ada duplikasi pada `tags`.
+3. **Agregasi data berdasarkan movieId**
+   - Melakukan pengelompokan (grouping) dan penggabungan (aggregation) data berdasarkan movieId.
+3. **Penggabungan Tag per Film**
    - Menggunakan `movie.csv` dan `tag.csv`, kita gabungkan kolom `genres` dan tag menjadi satu string per film (`movie_tags`)
    - Penggantian karakter pada genre pada kolom `movies_tags`.
+   - Fungsi `fillna('')` digunakan untuk menangani nilai missing (NaN) pada kolom tag sebelum penggabungan menjadi kolom `combined`.
 5. **TF-IDF Vectorization (Content-Based)**
    - Kolom `combined` ditransformasi menjadi vektor menggunakan `TfidfVectorizer`.
 6. **Pengambilan sampel (sampling) dari data rating**
